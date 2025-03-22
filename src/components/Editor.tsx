@@ -73,8 +73,7 @@ export default function Editor() {
                             </Md2PosterHeader>
                             <Md2PosterContent>{mdString}</Md2PosterContent>
                             <Md2PosterFooter className="text-center">
-                                <img src="/logo.png" alt="logo" className="inline-block mr-2 w-5" />
-                                比特金矿出品
+                                <img src="/Footer.png" alt="logo" />
                             </Md2PosterFooter>
                         </Md2Poster>
                     </div>
