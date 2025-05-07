@@ -1,0 +1,15 @@
+diff --git a/node_modules/markdown-to-poster/dist/markdown-to-poster.js b/node_modules/markdown-to-poster/dist/markdown-to-poster.js
+index 136280b..d579084 100644
+--- a/node_modules/markdown-to-poster/dist/markdown-to-poster.js
++++ b/node_modules/markdown-to-poster/dist/markdown-to-poster.js
+@@ -17938,8 +17938,8 @@ const ig = ({
+     {
+       components: {
+         img(a) {
+-          const { node: u, src: o, ...l } = a, f = o && `https://api.allorigins.win/raw?url=${encodeURIComponent(o)}`;
+-          return /* @__PURE__ */ Se("img", { ...l, src: f });
++            const { node: u, src: o, ...l } = a;
++            return /* @__PURE__ */ Se("img", { ...l, src: o });
+         }
+       },
+       remarkPlugins: [Ym],
