@@ -25,20 +25,24 @@ export default function PosterView() {
   // 需要根据url参数，作为mdString 的默认值
   const searchParams = useSearchParams()
   const mdString = decodeURIComponent(searchParams?.get('content')|| defaultContentMd) 
-  const headerString = decodeURIComponent(searchParams?.get('header') || 'News')
-  const footerString = decodeURIComponent(searchParams?.get('footer') || 'Powered by Powered by markdown-to-image-serve.jcommon.top')
+//   const headerString = decodeURIComponent(searchParams?.get('header') || 'News')
+//   const footerString = decodeURIComponent(searchParams?.get('footer') || 'Powered by Powered by markdown-to-image-serve.jcommon.top')
+  const now = new Date();
+  const timezoneOffset = now.getTimezoneOffset() * 60000; // 获取当前时区与UTC的时间差（以毫秒为单位）
+  const localDate = new Date(now.getTime() - timezoneOffset);
+  const dateString = localDate.toISOString().slice(0, 10);
+
 
   return (
     <div className="poster-content" style={{display: "inline-block"}}>
           {/* Preview */}
             <Md2Poster theme="SpringGradientWave" >
               <Md2PosterHeader  className="flex justify-center items-center px-4 font-medium text-lg">
-                <span>{new Date().toISOString().slice(0, 10)} {headerString}</span>
+              <span>{dateString} 【比特金矿】精选线报</span>
               </Md2PosterHeader>
               <Md2PosterContent>{mdString}</Md2PosterContent>
               <Md2PosterFooter className='text-center'>
-                <Image src="/logo.png" alt="logo" width={20} height={20} className='inline-block mr-2' />
-                {footerString}
+                <img src="/Footer.png" alt="logo" />
               </Md2PosterFooter>
             </Md2Poster>
     </div>
